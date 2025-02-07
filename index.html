@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7 Roses of Us</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('https://www.transparenttextures.com/patterns/soft-wallpaper.png'), linear-gradient(to bottom, #ffdde1, #ee9ca7);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        
+        .container {
+            max-width: 90%;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            color: #c2185b;
+            font-size: 42px;
+        }
+        p.intro {
+            font-size: 18px;
+            color: #555;
+            font-style: italic;
+        }
+        .bouquet {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .rose {
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, #ff4b5c, #c2185b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 22px;
+            cursor: pointer;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+        }
+        .rose:hover {
+            transform: scale(1.15);
+            background: radial-gradient(circle, #ff6b81, #d63041);
+        }
+        .message {
+            display: none;
+            font-size: 18px;
+            color: #333;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+            font-style: italic;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+        }
+        .message.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0px);
+        }
+        .thank-you {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 20px;
+            color: #444;
+            font-weight: 600;
+        }
+    </style>
+    <script>
+        function showMessage(id) {
+            let messages = document.querySelectorAll('.message');
+            messages.forEach(msg => msg.classList.remove('show'));
+            document.getElementById(id).classList.add('show');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>7 Roses of Us 🌹</h1>
+        <p class="intro">Every rose holds a story, a piece of my heart dedicated to you.</p>
+        
+        <div class="bouquet">
+            <div class="rose" onclick="showMessage('redMessage')">❤️</div>
+            <div class="rose" onclick="showMessage('pinkMessage')">💖</div>
+            <div class="rose" onclick="showMessage('whiteMessage')">🤍</div>
+            <div class="rose" onclick="showMessage('yellowMessage')">💛</div>
+            <div class="rose" onclick="showMessage('orangeMessage')">🧡</div>
+            <div class="rose" onclick="showMessage('lavenderMessage')">💜</div>
+            <div class="rose" onclick="showMessage('blueMessage')">💙</div>
+        </div>
+        
+        <p id="redMessage" class="message"><b>Red Rose – Deep Love ❤️</b><br>You are the fire in my heart, the reason my world feels alive.</p>
+        <p id="pinkMessage" class="message"><b>Pink Rose – Admiration 💖</b><br>I admire everything about you—your kindness, your laughter, your soul.</p>
+        <p id="whiteMessage" class="message"><b>White Rose – Pure Devotion 🤍</b><br>My love for you is as pure as the morning light, untainted and true.</p>
+        <p id="yellowMessage" class="message"><b>Yellow Rose – My Sunshine 💛</b><br>You brighten my life in ways I never imagined. My happiness begins with you.</p>
+        <p id="orangeMessage" class="message"><b>Orange Rose – Passion & Energy 🧡</b><br>Every moment with you is filled with passion, adventure, and warmth.</p>
+        <p id="lavenderMessage" class="message"><b>Lavender Rose – Magic & Enchantment 💜</b><br>From the very first moment, you cast a spell on my heart.</p>
+        <p id="blueMessage" class="message"><b>Blue Rose – A Rare Love 💙</b><br>What we share is rare and irreplaceable, something only we understand.</p>
+        
+        <p class="thank-you">You assured me that I could confide in you when I was ready, and that meant the world to me. Thank you for being my safe space. 💖</p>
+    </div>
+</body>
+</html>
+
